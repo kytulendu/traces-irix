@@ -1,1 +1,0 @@
-	cc -g paint.o util.o -lgl -lX11 -limbuf -limage -lm -lc -o paint
