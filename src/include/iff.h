@@ -25,7 +25,8 @@
 
 
 #include <sys/types.h>
-#include <local/util.h>
+
+#include <util.h>
 
 #ifdef __sgi
 #include <dmedia/moviefile.h>

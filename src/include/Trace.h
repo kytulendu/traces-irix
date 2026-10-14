@@ -68,10 +68,11 @@
 
 
 #include <sys/types.h>
-#include <local/util.h>
-#include <local/objfnt.h>
-#include <local/iff.h>
-#include "/usr/people/trace/ika.h"
+
+#include <util.h>
+#include <objfnt.h>
+#include <iff.h>
+#include "../trace/ika.h"
 
 #define IRIS 1
 #define ELAN 2

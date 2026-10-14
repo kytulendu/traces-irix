@@ -35,7 +35,7 @@
 #endif
 #include <sys/mman.h>
 
-#include <local/iff.h>
+#include <iff.h>
 
 #define SWAP_SHORT(x) (((unsigned short) (x) << 8) | ((unsigned short) (x) >> 8))
 #define SWAP_LONG(x) (((x) << 24) | (((x) & 0xff00) << 8) | (((x) >> 8) & 0xff00) | (((x) >> 24) & 0xff))
