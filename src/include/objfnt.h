@@ -35,9 +35,9 @@ typedef struct objfnt {
     struct objfnt *freeaddr;	/* if freeaddr != 0, objfnt is one chunck */
     short type;
     short charmin, charmax;
-    short nchars;
+    short my_nchars;
     short scale;
-    chardesc *chars;
+    chardesc *my_chars;
 } objfnt;
 
 #define OFMAGIC		0x93339333

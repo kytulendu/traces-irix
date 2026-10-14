@@ -122,6 +122,7 @@ struct ButCol
 	short rgb;
 	unsigned long back,paper_sel,paper_desel,pen_sel,pen_desel;
 	unsigned long border1,border2,border3,border4;
+	short drmode, rt;	/* drawmode is ook naam fie */
 };
 
 struct ButBlock

@@ -69,6 +69,8 @@
 #define ELEM4(a, b, c, d, e)	( ELEM(a, b, c) || ELEM(a, d, e) )
 #define ELEM5(a, b, c, d, e, f)	( ELEM(a, b, c) || ELEM3(a, d, e, f) )
 #define ELEM6(a, b, c, d, e, f, g)	( ELEM(a, b, c) || ELEM4(a, d, e, f, g) )
+#define ELEM7(a, b, c, d, e, f, g, h)	( ELEM3(a, b, c, d) || ELEM4(a, e, f, g, h) )
+#define ELEM8(a, b, c, d, e, f, g, h, i)	( ELEM4(a, b, c, d, e) || ELEM4(a, f, g, h, i) )
 
 #define MIN2(x,y)		( (x)<(y) ? (x) : (y) )
 #define MIN3(x,y,z)		MIN2( MIN2((x),(y)) , (z) )
@@ -96,7 +98,29 @@
 #define SWAP_L(x) (((x << 24) & 0xff000000) | ((x << 8) & 0xff0000) | ((x >> 8) & 0xff00) | ((x >> 24) & 0xff))
 #define SWAP_S(x) (((x << 8) & 0xff00) | ((x >> 8) & 0xff))
 
+#define SWAP_SHORT(x) (((unsigned short) (x) << 8) | ((unsigned short) (x) >> 8))
+#define SWAP_LONG(x) (((x) << 24) | (((x) & 0xff00) << 8) | (((x) >> 8) & 0xff00) | (((x) >> 24) & 0xff))
+#define ENDIAN_NOP(x) (x)
+
+#define GET_BIG_LONG(x) (((uchar *) (x))[0] << 24 | ((uchar *) (x))[1] << 16 | ((uchar *) (x))[2] << 8 | ((uchar *) (x))[3])
+#define GET_LITTLE_LONG(x) (((uchar *) (x))[3] << 24 | ((uchar *) (x))[2] << 16 | ((uchar *) (x))[1] << 8 | ((uchar *) (x))[0])
+
+#ifdef __sgi
 #define MAKE_ID(a,b,c,d) ( (long)(a)<<24 | (long)(b)<<16 | (c)<<8 | (d) )
+#define GET_ID GET_BIG_LONG
+#define LITTLE_SHORT SWAP_SHORT
+#define LITTLE_LONG SWAP_LONG
+#define BIG_SHORT ENDIAN_NOP
+#define BIG_LONG ENDIAN_NOP
+#else
+#define MAKE_ID(a,b,c,d) ( (long)(d)<<24 | (long)(c)<<16 | (b)<<8 | (a) )
+#define GET_ID GET_LITTLE_LONG
+#define LITTLE_SHORT ENDIAN_NOP
+#define LITTLE_LONG ENDIAN_NOP
+#define BIG_SHORT SWAP_SHORT
+#define BIG_LONG SWAP_LONG
+#endif
+
 
 #ifdef __ANSI_CPP__
 	/* ansi */
@@ -110,6 +134,10 @@
 	/* -cckr */
 #define NEW(x) (x*)mallocN(sizeof(x),"x")
 #define CLN(x) (x*)callocN(sizeof(x),"x")
+	#define PRINT(d, var1)	printf(# var1 ":%" # d "\n", var1)
+	#define PRINT2(d, e, var1, var2)	printf(# var1 ":%" # d " " # var2 ":%" # e "\n", var1, var2)
+	#define PRINT3(d, e, f, var1, var2, var3)	printf(# var1 ":%" # d " " # var2 ":%" # e " " # var3 ":%" # f "\n", var1, var2, var3)
+	#define PRINT4(d, e, f, g, var1, var2, var3, var4)	printf(# var1 ":%" # d " " # var2 ":%" # e " " # var3 ":%" # f " " # var4 ":%" # g "\n", var1, var2, var3, var4)
 #endif
 
 
@@ -155,10 +183,13 @@ typedef struct MemTail {
 	long tag3;
 } MemTail;
 
-#define MEMTAG1 'MEMO'
-#define MEMTAG2 'RYBL'
-#define MEMTAG3 'OCK!'
-#define MEMFREE 'FREE'
+
+
+#define MEMTAG1 MAKE_ID('M', 'E', 'M', 'O')
+#define MEMTAG2 MAKE_ID('R', 'Y', 'B', 'L')
+#define MEMTAG3 MAKE_ID('O', 'C', 'K', '!')
+#define MEMFREE MAKE_ID('F', 'R', 'E', 'E')
+
 #define MEMNEXT(x) ((MemHead *)(((char *) x) - ((char *) & (((MemHead *)0)->next))))
 
 extern short totblock;

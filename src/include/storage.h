@@ -54,10 +54,15 @@ struct direntry{
 	struct	stat s;
 	ulong	flags;
 	char	size[16];
-	char	mode[16];
+	char	mode1[4];
+	char	mode2[4];
+	char	mode3[4];
 	char	owner[16];
 	char	time[8];
 	char	date[16];
+	char	extra[16];
+	void	*poin;
+	int		nr;
 };
 
 struct dirlink

@@ -63,6 +63,10 @@
 
 /* ******************* DEFINES ********************************* */
 
+	/********************** X11 PATCH !!! ********************* */
+#define _XLIB_H_
+
+
 #include <sys/types.h>
 #include <local/util.h>
 #include <local/objfnt.h>
@@ -139,10 +143,6 @@
 #define LEN(x,y)		{fsqrt((x)*(x)+(y)*(y))}
 #define SGN(x)			( (x)>0 ? 1: (x)<0 ? -1: 0 )
 
-#define PRINT(d, var)	printf("var:%d\n", var)
-#define PRINT2(d, e, var1, var2)	printf("var1: %d var2: %e\n", var1, var2)
-#define PRINT3(d, e, f, var1, var2, var3)	printf("var1: %d var2: %e var3: %f\n", var1, var2, var3)
-#define PRINT4(d, e, f, g, var1, var2, var3, var4)	printf("var1: %d var2: %e var3: %f var4: %g\n", var1, var2, var3, var4)
 
 #define TESTBASE(base)	(base->f & 1)!=0 && (base->lay & view0.lay)!=0
 
