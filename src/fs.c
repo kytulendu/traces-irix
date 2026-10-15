@@ -50,12 +50,12 @@ zipfork "fs >/dev/console"
 #include <gl/gl.h>
 #include <math.h>
 #include <gl/device.h>
-#include <local/Button.h>
+#include "Button.h"
 #include <stdio.h>
 #include <fmclient.h>
-#include <local/storage.h>
-#include <local/util.h>
-#include <local/iff.h>
+#include "storage.h"
+#include "util.h"
+#include "iff.h"
 #include <time.h>
 #include <signal.h>
 #include <getopt.h>
@@ -65,7 +65,7 @@ zipfork "fs >/dev/console"
 #include <sys/times.h>	/* times */
 #include <sys/param.h>
 
-#include <local/gl_util.h>
+#include "gl_util.h"
 
 #define TOPFREE  (40+16)
 #define FIRSTLINE  (TOPFREE + 12)
