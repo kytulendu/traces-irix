@@ -8,7 +8,7 @@
 CC= cc
 
 # You may need to adjust these cc options:
-CFLAGS= -O -mips1
+CFLAGS= -O -mips2
 # Generally, we recommend defining any configuration symbols in jconfig.h,
 # NOT via -D switches here.
 

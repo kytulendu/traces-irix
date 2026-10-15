@@ -1,15 +1,16 @@
 # Makefile for imbuf
 #
 # For SGI IRIX 5.3 with IDO
+#
 
 # C compiler
 CC=cc
 
 # Include directory
-INCLUDES= -I. -I./jpeg-6b/ -I../include
+INCLUDES= -I. -I./jpeg-6b/ -I../include/
 
 # C compiler options
-CFLAGS= -O -mips1 $(INCLUDES)
+CFLAGS= -O -mips2 $(INCLUDES)
 
 # library (.a) file creation command
 AR= ar scru
@@ -33,7 +34,7 @@ rotate.o scaling.o targa.o tiff.o tim.o troep.o util.o writeimage.o
 
 all: libimbuf.so
 
-# note: must use tab as white space in entry below
+# note: must use tab as white space in all entry
 libimbuf.a: $(OBJS)
 	touch libimbuf.a
 	$(RM) libimbuf.a
@@ -48,41 +49,14 @@ clean:
 	$(RM) *.o
 	$(RM) libimbuf.a
 
-#install: all
+install: all
 
+# Comment this when first building libimbuf as convert_arrays.h is already generated.
 #convert_arrays.h: make_convert
 #	make_convert > convert_arrays.h
 #make_convert: make_convert.c
-#	cc make_convert.c ../util.o -limbuf -lm -o make_convert
+#	cd .. ; make util.o; cd imbuf
+#	$(CC) $(CFLAGS) make_convert.c ../util.o -limbuf -lm -o make_convert
 
-allocimbuf.o: allocimbuf.c
-amiga.o: amiga.c
-anim.o: anim.c
-antialias.o: antialias.c
-bitplanes.o: bitplanes.c
-cdi.o: cdi.c
-cmap.o: cmap.c
-cspace.o: cspace.c
-data.o: data.c matrix.h
-delta.o: delta.c
-dither.o: dither.c
-divers.o: divers.c
-filter.o: filter.c
-ham.o: ham.c
-hamx.o: hamx.c convert_arrays.h
-iff.o: iff.c
-iris.o: iris.c
-izoom.o: izoom.c
-jpeg.o: jpeg.c
-makecmap.o: makecmap.c
-mdec_decode.o: mdec_decode.c xa_mpg.h
-readimage.o: readimage.c
-rectop.o: rectop.c
-rotate.o: rotate.c
-scaling.o: scaling.c
-targa.o: targa.c
-tiff.o: tiff.c
-tim.o: tim.c
-troep.o: troep.c
-util.o: util.c
-writeimage.o: writeimage.c
+.c.o:
+	$(CC) $(CFLAGS) -c $<
