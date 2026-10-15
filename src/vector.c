@@ -23,11 +23,11 @@
 
 #include <stdio.h>
 #include <malloc.h>
-#include <local/util.h>
+#include "util.h"
 #include <gl/gl.h>
 #include <gl/device.h>
 #include <math.h>
-#include <local/iff.h>
+#include "iff.h"
 
 
 /*

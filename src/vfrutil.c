@@ -30,8 +30,8 @@
 #include <gl/gl.h>
 #include <gl/device.h>
 #include <stdio.h> 
-#include <local/iff.h>
-#include <local/vfrutil.h>
+#include "iff.h"
+#include "vfrutil.h"
 #include <errno.h>
 
 ulong yuvbars[] = {

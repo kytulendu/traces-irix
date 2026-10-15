@@ -21,7 +21,7 @@
 
 #include "imbuf.h" 
 
-#include <iff.h>
+#include "iff.h"
 
 #define OBJECTBLOK "cspace"
 

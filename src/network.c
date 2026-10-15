@@ -25,7 +25,7 @@
 #include <errno.h>
 #include <sys/time.h>
 #include <signal.h>
-#include <local/network.h>
+#include "network.h"
 
 #define malloc(x) mallocN(x,"malloc")
 #define free(x) freeN(x)

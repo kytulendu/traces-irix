@@ -33,7 +33,8 @@
 
 #include "play.h"
 #include "glxh2.h"
-#include <local/util.h>
+
+#include "util.h"
 
 /*
  *Sproc include files

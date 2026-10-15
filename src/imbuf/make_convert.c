@@ -19,7 +19,7 @@
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
 
-#include <iff.h>
+#include "iff.h"
 
 #include <math.h>
 

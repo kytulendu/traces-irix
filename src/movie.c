@@ -21,8 +21,8 @@
 
 #include <sys/types.h>
 
-#include <local/iff.h>
-#include <local/util.h>
+#include "iff.h"
+#include "util.h"
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>

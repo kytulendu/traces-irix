@@ -32,7 +32,7 @@
  */
 #include <gl/image.h>
 #include <math.h>
-#include <local/iff.h>
+#include "iff.h"
 
 #define GIFGAMMA	(1.5)	/* smaller makes output image darker */
 

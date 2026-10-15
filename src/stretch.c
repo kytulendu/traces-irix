@@ -24,8 +24,8 @@
 #include <stdlib.h>			/* voorkomt dat je bij malloc type moet aangeven */
 #include <gl/gl.h>
 #include <gl/device.h>
-#include <local/iff.h>
-#include <local/util.h>
+#include "iff.h"
+#include "util.h"
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>

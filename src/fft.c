@@ -25,8 +25,8 @@
 #include <gl/device.h>
 #include <stdio.h>
 #include <math.h>
-#include <local/iff.h>
-#include <fft.h>
+#include "iff.h"
+#include "fft.h"
 
 /*
 

@@ -25,9 +25,9 @@
 #include <gl/gl.h>
 #include <gl/device.h>
 #include <gl/get.h>
-#include <local/iff.h>
-#include <local/util.h>
-#include <local/gl_util.h>
+#include "iff.h"
+#include "util.h"
+#include "gl_util.h"
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -43,7 +43,7 @@
 
 /*#include <cdaudio.h>*/
 
-/* #include <local/dec_hamx_array> */
+/* #include "dec_hamx_array" */
 
 /*
 

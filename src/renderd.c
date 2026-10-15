@@ -26,8 +26,8 @@
 #include <fcntl.h>
 #include <stdio.h> 
 #include <errno.h>
-#include <local/util.h>
-#include <local/network.h>
+#include "util.h"
+#include "network.h"
 #include <stdlib.h>				/* getenv */
 #include <signal.h>				/* kill */
 #include <sys/param.h>			/* MAXHOSTNAMELEN */

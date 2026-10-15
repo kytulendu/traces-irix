@@ -32,7 +32,8 @@
 
 #include "play.h"
 #include "glxh2.h"
-#include <local/util.h>
+
+#include "util.h"
 
 /*
  *Sproc include files
@@ -42,7 +43,7 @@
 #include <sys/wait.h>
 
 #include <Xm/MwmUtil.h>
-#include <local/network.h>
+#include "network.h"
 #include <dmedia/dmedia.h>
 
 #include <math.h>

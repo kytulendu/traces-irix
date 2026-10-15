@@ -19,7 +19,7 @@
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
 
-#include <local/util.h>
+#include "util.h"
 
 #include <sys/types.h>
 #include <sys/stat.h>

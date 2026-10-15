@@ -19,12 +19,12 @@
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
 
-#include <local/iff.h>
+#include "iff.h"
 
 #include <gl/image.h>
-#include <local/util.h>
-#include <local/gl_util.h>
-#include <local/Button.h>
+#include "util.h"
+#include "gl_util.h"
+#include "Button.h"
 #include <fmclient.h>
 
 /*

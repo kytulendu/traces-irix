@@ -19,9 +19,9 @@
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
 
-#include <local/iff.h>
+#include "iff.h"
 
-#include <local/util.h>
+#include "util.h"
 #include <fcntl.h>
 #include <gl/gl.h>
 #include <gl/device.h>

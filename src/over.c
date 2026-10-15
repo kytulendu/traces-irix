@@ -21,9 +21,9 @@
 
 #include <sys/types.h>
 
-#include <local/iff.h>
-#include <local/storage.h>
-#include <local/util.h>
+#include "iff.h"
+#include "storage.h"
+#include "util.h"
 #include <gl/gl.h>
 #include <gl/device.h>
 #include <string.h>

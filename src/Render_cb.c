@@ -30,10 +30,10 @@
 #include <sys/mman.h>			/* mmap */
 #include <stdlib.h>				/* getenv */
 
-#include <local/util.h>
+#include "util.h"
 #include "renderd.h"
 
-#include <local/network.h>
+#include "network.h"
 #include <X11/Xlib.h>
 
 extern char lastfile[];

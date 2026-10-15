@@ -69,9 +69,10 @@
 
 #include <sys/types.h>
 
-#include <util.h>
-#include <objfnt.h>
-#include <iff.h>
+#include "util.h"
+#include "objfnt.h"
+#include "iff.h"
+
 #include "../trace/ika.h"
 
 #define IRIS 1

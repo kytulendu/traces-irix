@@ -21,7 +21,7 @@
 
 #include <stdio.h>
 
-#include <local/util.h>
+#include "util.h"
 #include <printstiff.h>
 #include <malloc.h>
 #include <math.h>

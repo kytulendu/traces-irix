@@ -21,7 +21,7 @@
 
 #include <stdio.h>
 
-#include <local/util.h>
+#include "util.h"
 #include <fcntl.h>
 #include <sys/time.h>
 

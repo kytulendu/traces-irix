@@ -73,7 +73,7 @@
 #include <gl/image.h>
 
 #include <dmedia/vl.h>
-#include <local/iff.h>
+#include "iff.h"
 
 #define VL_PACKING_INVALID	-1
 #define Debug			if (debug) printf

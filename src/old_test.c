@@ -21,15 +21,15 @@
 
 #include <stdio.h>
 
-#include <local/iff.h>
+#include "iff.h"
 #include <gl/image.h>
 #include <gl/device.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 
-#include <local/Button.h>
+#include "Button.h"
 #include <fmclient.h>
-#include <local/gl_util.h>
+#include "gl_util.h"
 #include <math.h>
 #include <unistd.h>
 

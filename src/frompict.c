@@ -32,8 +32,8 @@
  *
  */
 #include <stdio.h>
-#include <local/pict.h>
-#include <local/iff.h>
+#include "pict.h"
+#include "iff.h"
 
 typedef struct opent {
 	int opcode;

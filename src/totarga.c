@@ -31,7 +31,7 @@
  *	 	    		Paul Haeberli - 1988
  */
 #include <gl/image.h>
-#include "stdio.h"
+#include <stdio.h>
 
 typedef struct TARGA {
 	unsigned char numid;	

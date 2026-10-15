@@ -19,9 +19,8 @@
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
 
-#include <iff.h>
-
-#include <util.h>
+#include "iff.h"
+#include "util.h"
 
 #define OBJECTBLOK "makecmap"
 

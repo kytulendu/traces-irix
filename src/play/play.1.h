@@ -66,8 +66,8 @@
  * local headers
  */
 
-#include <local/util.h>
-#include <local/network.h>
+#include "util.h"
+#include "network.h"
 
 
 #define GRAPHICS               10

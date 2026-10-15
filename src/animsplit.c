@@ -23,7 +23,7 @@
 
 #include <gl/gl.h>
 #include <gl/device.h>
-#include <local/iff.h>
+#include "iff.h"
 /*
 zipfork "make animsplit >/dev/console"                                                                           
 zipfork "animtest /mo/pics/martin/Custan1B.ani >/dev/console"                                       

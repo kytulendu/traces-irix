@@ -24,9 +24,9 @@
 #include <string.h>			/* strcpy etc.. */
 #include <stdio.h> 
 #include <errno.h>
-#include <local/util.h>
-#include <local/network.h>
-#include <local/Button.h>
+#include "util.h"
+#include "network.h"
+#include "Button.h"
 #include <stdlib.h>			/* getenv */
 #include <signal.h>			/* kill */
 #include <sys/param.h>			/* MAXHOSTNAMELEN */

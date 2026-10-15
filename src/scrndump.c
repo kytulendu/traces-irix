@@ -33,8 +33,8 @@ bindkey -r f2,'pal\n'
 #include <gl/get.h>
 /*#include <gl/gr2vid.h>*/
 
-#include <local/iff.h>
-#include <local/util.h>
+#include "iff.h"
+#include "util.h"
 
 /*
 

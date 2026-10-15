@@ -29,8 +29,8 @@
 #include <math.h>
 #include <fmclient.h>
 #include <time.h>
-#include <local/util.h>
-#include <local/gl_util.h>
+#include "util.h"
+#include "gl_util.h"
 #include <gl/image.h>
 
 short mousex,mousey,mousexs,mouseys,mousek,mouse[2];

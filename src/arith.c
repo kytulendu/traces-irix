@@ -101,7 +101,7 @@ float	AreaPoly3Dfl(nr, verts, normal)	    (met trapezium regel)
 
 #include <math.h>
 #include <bstring.h>
-/* #include "/usr/people/include/Trace.h" */
+/* #include "Trace.h" */
 #define SMALL_NUMBER	1.e-8
 
 

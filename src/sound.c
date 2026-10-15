@@ -41,7 +41,7 @@
  */
 
 
-#include <local/util.h>
+#include "util.h"
 
 #include <sys/types.h>
 #include <stdio.h>

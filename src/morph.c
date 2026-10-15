@@ -19,14 +19,14 @@
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
 
-#include <local/iff.h>
+#include "iff.h"
 
 #include <gl/image.h>
 #include <gl/gl.h>
 #include <gl/device.h>
-#include <local/util.h>
-#include <local/gl_util.h>
-#include <local/Button.h>
+#include "util.h"
+#include "gl_util.h"
+#include "Button.h"
 #include <math.h>
 #include <fcntl.h>
 #include <sys/sysmips.h>	/* voor fp-exeption trap */

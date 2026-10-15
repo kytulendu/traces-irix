@@ -21,8 +21,8 @@
 
 #include <stdio.h>
 
-#include <local/iff.h>
-#include <local/util.h>
+#include "iff.h"
+#include "util.h"
 #include <gl/image.h>
 #include <unistd.h>
 #include <sys/resource.h>

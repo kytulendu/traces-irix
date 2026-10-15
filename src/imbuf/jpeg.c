@@ -21,8 +21,9 @@
 
 #include <stdio.h>
 
-#include <iff.h>
-#include <util.h>
+#include "iff.h"
+#include "util.h"
+
 #include "jpeglib.h"
 
 /*

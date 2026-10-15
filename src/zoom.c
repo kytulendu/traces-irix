@@ -24,7 +24,7 @@
 #include <gl/gl.h>
 #include <gl/device.h>
 #include <stdio.h> 
-#include <local/iff.h>
+#include "iff.h"
 
 /*
 

@@ -23,7 +23,7 @@
 
 #include <gl/gl.h>
 #include <gl/device.h>
-#include <local/gl_util.h>
+#include "gl_util.h"
 
 short mousexN = 0, mouseyN = 0, *mousexNp = &mousexN , *mouseyNp = &mouseyN;
 long qualN = 0, winN = 0, *qualNp = &qualN, *winNp = &winN;
