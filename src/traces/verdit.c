@@ -61,7 +61,7 @@ short		extrudeflag(flag,type)
 #include <string.h>
 #include <malloc.h>
 #include <time.h>
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 
 extern ListBase editNurb;
 extern ListBase bpbase;

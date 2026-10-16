@@ -49,9 +49,9 @@ cc -O3 tab.c noise.o -lgl_s -lc_s -lfm_s -float -lm -o tab
 
 #include <gl/gl.h>
 #include <gl/device.h>
-#include "/usr/people/frank/source/iff.h"
-#include "/usr/people/include/Trace.h"
-#include "/usr/people/include/Button.h"
+#include "iff.h"
+#include "Trace.h"
+#include "Button.h"
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/syssgi.h>

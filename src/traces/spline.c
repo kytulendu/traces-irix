@@ -53,7 +53,7 @@ float	ipo(bez,fac)
 #include <math.h>
 #include <gl/gl.h>
 #include <gl/device.h>
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 
 #define SMALL -1.0e-10
 

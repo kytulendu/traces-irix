@@ -59,8 +59,8 @@ long		*newadr(adr)
 #include <stdlib.h>
 #include <math.h>
 #include <malloc.h>
-#include "/usr/people/include/Trace.h"
-#include "/usr/people/include/Button.h"
+#include "Trace.h"
+#include "Button.h"
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/statfs.h>

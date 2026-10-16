@@ -52,7 +52,7 @@ bindkey -r f2,'/usr/people/trace/traces\n'
 #include <math.h>
 #include <gl/device.h>
 #include <string.h>
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 
 #define PARENT(base)	( (base)->p || (base)->pkey )
 

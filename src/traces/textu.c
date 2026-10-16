@@ -50,10 +50,10 @@ struct Textudata *inittextudata(soort)
 #include <math.h>
 #include <string.h>
 #include <gl/device.h>
-#include <local/iff.h>
+#include "iff.h"
 #include <stdlib.h>		/* rand */
-#include "/usr/people/include/Button.h"	/* BTST */
-#include "/usr/people/include/Trace.h"
+#include "Button.h"	/* BTST */
+#include "Trace.h"
 
 struct Tex *rtex;
 float t[3], dxt[3],dyt[3];

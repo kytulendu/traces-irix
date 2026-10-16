@@ -32,8 +32,8 @@
 #include <math.h>
 #include <gl/gl.h>
 #include <fmclient.h>
-#include <local/objfnt.h>
-#include <local/util.h>
+#include "objfnt.h"
+#include "util.h"
 
 #define SKIP 4
 #define LINELEN 2048

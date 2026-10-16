@@ -49,8 +49,8 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include "iff.h"
-#include "/usr/people/include/Button.h"
-#include "/usr/people/include/Trace.h"
+#include "Button.h"
+#include "Trace.h"
 
 extern ulong rectyellow[5][5],rectpurple[5][5];
 extern void VecMulf(float *v1, float f);

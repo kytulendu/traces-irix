@@ -48,13 +48,13 @@ short 		zbufshade()
 */
 
 /*#include <gl/feed.h>*/	/* werkt niet voor mips1 em is toch niet meer nodig */
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 #include <gl/gl.h>
 #include <gl/device.h>
 #include <math.h>
 #include <fcntl.h>
 #include <string.h>
-#include "/usr/people/include/iff.h"
+#include "iff.h"
 
 extern float Normalise();
 

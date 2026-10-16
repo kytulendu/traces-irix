@@ -47,7 +47,7 @@ short		render(fra)
 		initrender(anim)
 */
 
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 #include <gl/gl.h>
 #include <gl/device.h>
 #include <math.h>

@@ -41,7 +41,7 @@ ADAPTED: 5-93,  NeoGeo
 /*  fit_cubic.c	*/									
 /*	Piecewise cubic fitting code	*/
 
-#include <local/Trace.h>
+#include "Trace.h"
 #undef ABS
 #undef SGN
 #undef SWAP

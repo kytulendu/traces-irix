@@ -32,9 +32,9 @@
 #include <stdlib.h>
 #include <gl/gl.h>
 #include <gl/device.h>
-#include "/usr/people/include/Trace.h"
-#include "/usr/people/frank/source/iff.h"
-#include "/usr/people/include/Button.h"
+#include "Trace.h"
+#include "iff.h"
+#include "Button.h"
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/syssgi.h>

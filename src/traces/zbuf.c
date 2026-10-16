@@ -39,7 +39,7 @@ short zbuffermetdehandAli(xw,yw,xpart,ypart)
 #include <gl/device.h>
 #include <math.h>
 #include <string.h>
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 
 #define ABUFPART 64
 

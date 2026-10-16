@@ -23,16 +23,16 @@
 
 
 #include <sys/types.h>
-#include <local/util.h>
-#include <local/iff.h>
-#include <local/objfnt.h>
+#include "util.h"
+#include "iff.h"
+#include "objfnt.h"
 #include <stdio.h> 
 #include <fcntl.h>
 #include <string.h>
 #include <gl/gl.h>
 #include <gl/device.h>
 #include <math.h>
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 
 #define CLIP MAKE_ID('C','L','I','P')
 #define CLNM MAKE_ID('C','L','N','M')

@@ -37,7 +37,7 @@
 #include <string.h>
 #include <time.h>
 #include <gl/gl.h>
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 #include <stdlib.h>			/* rand */
 
 struct VV *effvv;

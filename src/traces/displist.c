@@ -29,7 +29,7 @@
 #include <math.h>
 #include <gl/device.h>
 #include <string.h>
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 
 
 struct FastLamp *flar[MAXLAMP];

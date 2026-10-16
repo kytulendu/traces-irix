@@ -19,9 +19,9 @@
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
 
-#include "/usr/people/frank/source/iff.h"
+#include "iff.h"
 
-#include "/usr/people/include/util.h"
+#include "util.h"
 #include <gl/gl.h>
 #include <gl/device.h>
 #include <math.h>

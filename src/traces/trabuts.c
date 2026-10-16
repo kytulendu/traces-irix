@@ -65,8 +65,8 @@ short	button(&var,min,max,str)
 #include <string.h>
 #include <time.h>
 #include <malloc.h>
-#include "/usr/people/include/Trace.h"
-#include "/usr/people/include/Button.h"
+#include "Trace.h"
+#include "Button.h"
 
 #define SHLX (-.577349)
 #define SHLY (-.577349)

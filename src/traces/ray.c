@@ -33,7 +33,7 @@ bindkey -r f2,'/usr/people/trace/traces\n'
 #include <gl/device.h>
 #include <math.h>
 #include <string.h>
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 
 
 #define EPSILON 1.0e-20

@@ -42,7 +42,7 @@ short	isbase(base)
 #include <math.h>
 #include <malloc.h>
 #include <string.h>
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 
 short isbase(base)
 struct Base *base;

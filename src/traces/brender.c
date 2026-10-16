@@ -26,9 +26,9 @@
 #include <string.h>
 #include <math.h>
 #include <fcntl.h>
-#include "/usr/people/include/iff.h"
-#include "/usr/people/include/Trace.h"
-#include "/usr/people/include/Button.h"
+#include "iff.h"
+#include "Trace.h"
+#include "Button.h"
 #include <malloc.h>
 #include <sys/schedctl.h>
 #include <stdio.h>

@@ -65,7 +65,7 @@ struct Base *duplibase()
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 
 extern void VecMulf(float *v1, float f);
 

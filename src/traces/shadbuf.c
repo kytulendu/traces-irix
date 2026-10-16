@@ -33,7 +33,7 @@
 #include <string.h>
 #include <malloc.h>
 #include "storage.h"
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 
 extern struct Osa O;
 float jitshad[32][2];

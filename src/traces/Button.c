@@ -275,9 +275,9 @@
 #include <gl/gl.h>
 #include <gl/device.h>
 #include <math.h>
-#include "/usr/people/include/Button.h"
+#include "Button.h"
 #include <stdio.h>
-#include <local/util.h>
+#include "util.h"
 
 #define TBOXPAT		1234
 

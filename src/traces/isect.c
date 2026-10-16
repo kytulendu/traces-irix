@@ -57,8 +57,8 @@ void intersectVV()
 #include <math.h>
 #include <gl/device.h>
 #include <string.h>
-#include "/usr/people/include/Trace.h"
-#include "/usr/people/include/Button.h"
+#include "Trace.h"
+#include "Button.h"
 #include <sys/times.h>
 
 

@@ -32,7 +32,7 @@
 #include <sys/times.h>
 #include <fcntl.h>
 #include <sys/param.h>
-#include "/usr/people/include/Trace.h"
+#include "Trace.h"
 #include <stdlib.h>			/* rand */
 
 extern unsigned char hash[512];
