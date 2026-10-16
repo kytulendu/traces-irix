@@ -27,7 +27,7 @@ from "Graphics Gems", Academic Press, 1990
 */
 
 #include <math.h>
-#include <local/GraphicsGems.h>
+#include "GraphicsGems.h"
 
 /******************/
 /*   2d Library   */

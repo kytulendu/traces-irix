@@ -49,7 +49,7 @@ ADAPTED: 5-93,  NeoGeo
 #undef TRUE
 #undef FALSE
 
-#include "/usr/people/insane/public/gems1/GraphicsGems.h"
+#include "GraphicsGems.h"
 #include <stdio.h>
 #include <math.h>
 
