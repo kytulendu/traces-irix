@@ -10,7 +10,7 @@ CC=cc
 INCLUDES= -I. -I./jpeg-6b/ -I../include/
 
 # C compiler options
-CFLAGS= -O -mips2 $(INCLUDES)
+CFLAGS= -O2 -mips2 $(INCLUDES)
 
 # library (.a) file creation command
 AR= ar scru
