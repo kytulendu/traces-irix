@@ -73,7 +73,7 @@
 #include "objfnt.h"
 #include "iff.h"
 
-#include "../trace/ika.h"
+#include "ika.h"
 
 #define IRIS 1
 #define ELAN 2
