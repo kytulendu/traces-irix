@@ -4044,7 +4044,7 @@ animlus:
 				}
 			}
 
-			if(R.anim==5) {
+			/*if(R.anim==5) {
 				if (appendtape(this)!=TRUE) G.afbreek= TRUE;
 				else if(remove(this)){
 					printf("Couldn't delete %s\n",this);
@@ -4052,7 +4052,7 @@ animlus:
 				}
 				else printf("Recorded: %s",this);
 			}
-			else printf("Saved: %s",this);
+			else*/ printf("Saved: %s",this);
 		}
 	}
 

@@ -74,7 +74,7 @@ struct dirlink
 extern int tapectl(long file,short cmd,ulong num);
 extern long filesize(long file);
 extern long calcchksum(long *point,long size);
-extern short appendtape(char *name);
+/*extern short appendtape(char *name);*/
 extern short copy(char *cpy,char *org);
 extern int exist(char *);
 extern ulong getdir(char *dirname,struct direntry **filelist);
