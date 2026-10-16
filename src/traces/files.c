@@ -2004,8 +2004,8 @@ void exoticlezer(char *str, short type)
 	
 	lbase.first= lbase.last= 0;
 
-	if (type == 0) printf("Iges NOT supported\n"); /*leesIGES(str, &lbase);*/
-	else if(type==1) printf("Cyber NOT supported\n"); /*leesCYBER(str, 4, 4, &lbase);*/
+	if (type == 0) /*printf("Iges NOT supported\n");*/ leesIGES(str, &lbase);
+	else if(type==1) /*printf("Cyber NOT supported\n");*/ leesCYBER(str, 4, 4, &lbase);
 	else if(type==2) leesDXF(str, &lbase);
 	else if(type==3) leesInventor(str, &lbase);
 
@@ -2618,10 +2618,10 @@ short app;
 			else if(strncmp(&s, "3DG1", 4)==0) {
 				videoscapelezer(dir);
 			}
-/*			else if( strncmp(&s, "IGES", 4)==0) {
+			else if( strncmp(&s, "IGES", 4)==0) {
 				exoticlezer(dir, 0);
 			}
-*/			else if( strncmp(&s, "Cybe", 4)==0) {
+			else if( strncmp(&s, "Cybe", 4)==0) {
 				exoticlezer(dir, 1);
 			}
 			else if( strncmp(&s, "#Inv", 4)==0) {

@@ -31,8 +31,8 @@
 
 #include <unistd.h>
 #include <device.h>
-#include "/usr/people/arjan/c/arjan.h"
-#include "/usr/people/include/util.h"
+#include "Trace.h"
+#include "util.h"
 
 #else
 
@@ -968,7 +968,7 @@ void leesIGES(char *str, struct ListBase *dispbase)
 		case 116 : 
 			dl=(struct DispList *)malloc (sizeof(struct DispList)+(1*3*sizeof(float)));
 			addtail(dispbase, dl);
-			dl->type= DL_POINT;
+			dl->type= DL_SEGM;
 			dl->parts= 1;
 			dl->nr= 1;
 			dl->col=7;

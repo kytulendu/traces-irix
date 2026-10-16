@@ -29,7 +29,7 @@ LDLIBSt= -lfm -lgl -lX11 -limbuf -lm -limage -lmpc -lmalloc
 LDLIBS2 = -lmovie -lfm -lgl -lX11 -limbuf -lm -limage -ldmedia -lcl -lawareaudio -laudio -lc -lmalloc -lfastm
 LDLIBS4000 = -lm -lfastm -lfm -lgl -limbuf -limage -lc -lmalloc
 
-OBJECT1 = add.o edit.o verdit.o view.o draw.o spline.o toets.o traces.o code.o toolbox.o anim.o files.o
+OBJECT1 = add.o edit.o verdit.o view.o draw.o spline.o toets.o traces.o code.o toolbox.o anim.o files.o cyber.o iges.o
 OBJECT2 = Button.o
 OBJECT3 = fitcurves.o GGVecLib.o
 OBJECT4 = arith.o noise.o

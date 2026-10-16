@@ -31,8 +31,8 @@
 
 #include <unistd.h>
 #include <device.h>
-#include "/usr/people/arjan/c/arjan.h"
-#include "/usr/people/include/util.h"
+#include "Trace.h"
+#include "util.h"
 
 #else
 
@@ -45,10 +45,6 @@
 #define fsqrt sqrt
 
 #endif
-
-#define PI M_PI/180
-#define nil 0
-
 
 /* ****************************************************************************** */
 /* *************************** leesCYBER **************************************** */
