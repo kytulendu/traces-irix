@@ -39,6 +39,7 @@
 #include <gl/gl.h>
 #include "Trace.h"
 #include <stdlib.h>			/* rand */
+#include <stdio.h>
 
 struct VV *effvv;
 
