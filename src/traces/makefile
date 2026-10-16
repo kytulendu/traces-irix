@@ -60,8 +60,8 @@ tracesg: $(OBJECT1) $(OBJECT2) $(OBJECT3) $(OBJECT4) $(OBJECT5) $(OBJECT6) $(OBJ
 	cd .. ; make util.o; make storage.o; cd traces
 	$(CC) $(CFLAGSG) $(OBJECT1) $(OBJECT2) $(OBJECT3) $(OBJECT4) $(OBJECT5) $(OBJECT6) $(OBJECT7) ../storage.o ../util.o $(LDLIBS2) -o tracesg
 
-brender: $(OBJECT5) brender.o
-	$(CC) -O2 -Wo,"-loopunroll 0" brender.o $(OBJECT4) $(OBJECT5) ../storage.o ../util.o $(LDLIBS) brender 
+#brender: $(OBJECT5) brender.o
+#	$(CC) -O2 -Wo,"-loopunroll 0" brender.o $(OBJECT4) $(OBJECT5) ../storage.o ../util.o $(LDLIBS) -o brender
 
 jit: jit.o code.o noise.o
-	$(CC) $(CFLAGS) noise.o code.o arith.o jit.o $(LDLIBS) jit
+	$(CC) $(CFLAGS) noise.o code.o arith.o jit.o $(LDLIBS) -o jit
