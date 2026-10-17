@@ -40,6 +40,10 @@ zipfork "morph /fast/demo/0250 >/dev/console"
 
 */
 
+#ifdef NEW
+#undef NEW
+#endif
+
 #define NEW(x) callocstructN(struct x, 1, # x)
 #define double float
 
@@ -840,7 +844,7 @@ void draw_clear(struct morphvec *mvec)
 }
 
 
-struct morphvec * getline()
+struct morphvec * get_line()
 {
 	long ofsx, ofsy, sizex, sizey, event;
 	short val, go = TRUE;
@@ -1690,7 +1694,7 @@ char **argv;
 			break;
 		case LEFTMOUSE:
 			if (val && actwin != outwin){
-				mvec = getline();
+				mvec = get_line();
 				if (mvec) {
 					draw_normal(msel);
 					msel = mselo = mvec;
