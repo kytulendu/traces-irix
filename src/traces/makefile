@@ -27,7 +27,7 @@ LDLIBS= -lgl -lX11 -lfm -limbuf -lmpc -lmalloc -lm -limage -lmovie -ldmedia -lcl
 LDLIBSt= -lfm -lgl -lX11 -limbuf -lm -limage -lmpc -lmalloc
 
 LDLIBS2 = -lmovie -lfm -lgl -lX11 -limbuf -lm -limage -ldmedia -lcl -lawareaudio -laudio -lc -lmalloc -lfastm
-LDLIBS4000 = -lm -lfastm -lfm -lgl -limbuf -limage -lc -lmalloc
+LDLIBS4000 = -lm -lfastm -lfm -lgl -limbuf -lc -lmalloc
 
 OBJECT1 = add.o edit.o verdit.o view.o draw.o spline.o toets.o traces.o code.o toolbox.o anim.o files.o cyber.o iges.o
 OBJECT2 = Button.o
@@ -60,8 +60,16 @@ tracesg: $(OBJECT1) $(OBJECT2) $(OBJECT3) $(OBJECT4) $(OBJECT5) $(OBJECT6) $(OBJ
 	cd .. ; make util.o; make storage.o; cd traces
 	$(CC) $(CFLAGSG) $(OBJECT1) $(OBJECT2) $(OBJECT3) $(OBJECT4) $(OBJECT5) $(OBJECT6) $(OBJECT7) ../storage.o ../util.o $(LDLIBS2) -o tracesg
 
+# this not able to link yet
 #brender: $(OBJECT5) brender.o
 #	$(CC) -O2 -Wo,"-loopunroll 0" brender.o $(OBJECT4) $(OBJECT5) ../storage.o ../util.o $(LDLIBS) -o brender
 
-jit: jit.o code.o noise.o
-	$(CC) $(CFLAGS) noise.o code.o arith.o jit.o $(LDLIBS) -o jit
+# this not able to link yet
+#jit: jit.o code.o noise.o
+#	$(CC) $(CFLAGS) noise.o code.o arith.o jit.o $(LDLIBS) -o jit
+
+stringtoimage: stringtoimage.o
+	$(CC) $(CFLAGS) stringtoimage.o -o stringtoimage
+
+tracesversion: tracesversion.o
+	$(CC) $(CFLAGS) tracesversion.o -o tracesversion
