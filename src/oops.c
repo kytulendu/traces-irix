@@ -320,7 +320,7 @@ struct OopsBase *oops;
 }
 
 
-long sortoops(oops1,oops2)
+int sortoops(oops1,oops2)
 struct OopsBase **oops1,**oops2;
 {
     if ((*oops1)->y  < (*oops2)->y) return (1);
