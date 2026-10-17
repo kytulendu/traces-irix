@@ -22,17 +22,15 @@
 /* tracesversion.c	nov. 92 
 
  * 
- * Dit programma laadt de file "lasttracesversion",  hoogt het eerst
- * daarin gevonden nummer op met 1 en schrijft het over.
- * 
- * Vervolgens wordt de traces ingelezen en daarin gezocht naar
- * de string "TracesVersion Develop".
- * Op de plek van "Develop" wordt het nummer geschreven.
- * De gewijzigde traces wordt daarna in de /usr/people/bin geschreven.
+ * This program loads the file "lasttracesversion", increase the number found in it by 1,
+ * and overwrite it.
+ *
+ * Next, the traces are read and searched for the string "TracesVersion Develop".
+ * The number is written in place of "Develop".
+ * The modified traces are then written to /usr/people/bin.
  * 
  * cc tracesversion.c -o tracesversion
  */
-
 
 #include <stdio.h>
 #include <fcntl.h>
