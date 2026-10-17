@@ -22,7 +22,7 @@
 #include "renderd.h"
 
 #include "forms.h"
-#include "Render.h"
+#include "render-gui.h"
 #include <netdb.h>
 #include <math.h>
 

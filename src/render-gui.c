@@ -24,7 +24,7 @@
 
 #include "forms.h"
 #include <stdlib.h>
-#include "Render.h"
+#include "render-gui.h"
 
 FD_Render *create_form_Render(void)
 {

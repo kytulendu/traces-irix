@@ -19,9 +19,9 @@
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
 
-#ifndef FD_Render_h_
+#ifndef FD_Render_gui_h_
 
-#define FD_Render_h_
+#define FD_Render_gui_h_
 /* Header file generated with fdesign. */
 
 /**** Callback routines ****/
@@ -85,5 +85,5 @@ typedef struct {
 
 extern FD_Render * create_form_Render(void);
 
-#endif /* FD_Render_h_ */
+#endif /* FD_Render_gui_h_ */
 

@@ -21,7 +21,7 @@
 
 #include "forms.h"
 
-#include "Render.h"
+#include "render-gui.h"
 
 #include <sys/types.h>
 #include <sys/stat.h>
