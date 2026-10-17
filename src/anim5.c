@@ -22,6 +22,7 @@
 #include "iff.h"
 
 #include "util.h"
+#include <stdio.h>
 #include <fcntl.h>
 #include <gl/gl.h>
 #include <gl/device.h>
