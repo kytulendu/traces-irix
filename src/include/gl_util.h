@@ -34,6 +34,11 @@
 #define ALT	(LALT | RALT)
 #define LCTRL	(1<<4)
 #define RCTRL	(1<<5)
+
+#ifdef CTRL
+#undef CTRL
+#endif
+
 #define CTRL	(LCTRL | RCTRL)
 #define LMOUSE	(1<<16)
 #define MMOUSE	(1<<17)
