@@ -31,6 +31,8 @@
  *				Paul Haeberli - 1990
  *
  */
+
+#include <gl/image.h>
 #include <stdio.h>
 #include "pict.h"
 #include "iff.h"
