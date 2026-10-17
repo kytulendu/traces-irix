@@ -75,6 +75,8 @@ This was the directory layout that I used while fixing and compiling Traces on I
 
 [TRACES - The beginnings of Blender](https://www.youtube.com/watch?v=_WH0arC4cDw) on SGI Indy
 
+[Traces, Blender from 1995](https://www.youtube.com/watch?v=wreHFveYdDg) on SGI Indy
+
 [Traces (Amiga version) on GitHub](https://github.com/Endertainer007/Traces_Amiga)
 
 [Blender's prehistory — Traces on Commodore Amiga (1987–1991)](https://zgodzinski.com/blender-prehistory/)
