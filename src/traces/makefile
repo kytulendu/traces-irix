@@ -56,7 +56,7 @@ traces: $(OBJECT1) $(OBJECT2) $(OBJECT3) $(OBJECT4) $(OBJECT5) $(OBJECT6) $(OBJE
 #	$(CC) $(CFLAGS4000) $(OBJECT1) $(OBJECT2) $(OBJECT3) $(OBJECT4) $(OBJECT5) $(OBJECT6) $(OBJECT7) ../storage.o ../util.o $(LDLIBS4000) -o traces4000
 #	if (-x /usr/people/trace/traces) /bin/su - root -c "chown root /usr/people/trace/traces4000 ; chmod +s /usr/people/trace/traces4000"
 
-tracesg: $(OBJECT1) $(OBJECT2) $(OBJECT3) $(OBJECT4) $(OBJECT5) $(OBJECT6) $(OBJECT7) /usr/people/frank/source/imbuf/libimbuf.a
+tracesg: $(OBJECT1) $(OBJECT2) $(OBJECT3) $(OBJECT4) $(OBJECT5) $(OBJECT6) $(OBJECT7) ../imbuf/libimbuf.a
 	cd .. ; make util.o; make storage.o; cd traces
 	$(CC) $(CFLAGSG) $(OBJECT1) $(OBJECT2) $(OBJECT3) $(OBJECT4) $(OBJECT5) $(OBJECT6) $(OBJECT7) ../storage.o ../util.o $(LDLIBS2) -o tracesg
 
