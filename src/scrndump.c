@@ -50,10 +50,10 @@ main()
 	long pic, maxx, maxy;
 	struct ImBuf *ibuf;
 	
-	printf("\nDruk beide Ctrl-toetsen tegelijkertijd in om een plaatje in de huidige\n");
-	printf("directory weg te schrijven.\n");
-	printf("Het eerste plaatje heet dump.0001, het volgende dump.0002, enz.\n");
-	printf("Druk beide Alt-toetsen in om het programma te stoppen.\n\n");
+	printf("\nPress both Ctrl keys simultaneously to save an image to the current\n");
+	printf("directory.\n");
+	printf("The first image will be named dump.0001, the next dump.0002, and so on.\n");
+	printf("Press both Alt keys to exit the program.\n\n");
 
 	foreground();
 	prefposition(0, 10, 0, 10);
