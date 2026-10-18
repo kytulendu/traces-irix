@@ -9,6 +9,8 @@ INCLUDES= -I. -I./include
 CFLAGS= -O2 -mips2 $(INCLUDES)
 #CFLAGS = -O2 -mips2 -Xcpluscomm $(INCLUDES)
 
+BINDIR=../bin-irix-mips2
+
 # require libforms: Chroma render-gui
 # not compile: movie saver shared
 default all: anim anim5 animsplit anti anti2 cmap fft fromjstream frompict fs \
@@ -30,35 +32,35 @@ storage.o: storage.c ./include/storage.h
 ##############################################################################
 
 anim: anim.o util.o gl_util.o
-	$(CC) $(CFLAGS) anim.o util.o gl_util.o -lmovie -lgl -lX11 -ldmedia -lcl -lawareaudio -laudio -limbuf -lm -o anim
+	$(CC) $(CFLAGS) anim.o util.o gl_util.o -lmovie -lgl -lX11 -ldmedia -lcl -lawareaudio -laudio -limbuf -lm -o $(BINDIR)/anim
 
 ##############################################################################
 # anim5: ???
 ##############################################################################
 
 anim5: anim5.o util.o
-	$(CC) $(CFLAGS) anim5.o util.o -lgl -limbuf -lm -lmpc -o anim5
+	$(CC) $(CFLAGS) anim5.o util.o -lgl -limbuf -lm -lmpc -o $(BINDIR)/anim5
 
 ##############################################################################
 # animsplit: Split animation file
 ##############################################################################
 
 animsplit: animsplit.o util.o
-	$(CC) $(CFLAGS) animsplit.o util.o -lmovie -lgl -lX11 -ldmedia -lcl -lawareaudio -laudio -limbuf -lm -o animsplit
+	$(CC) $(CFLAGS) animsplit.o util.o -lmovie -lgl -lX11 -ldmedia -lcl -lawareaudio -laudio -limbuf -lm -o $(BINDIR)/animsplit
 
 ##############################################################################
 # anti: ???
 ##############################################################################
 
 anti: anti.o util.o
-	$(CC) $(CFLAGS) anti.o util.o -lgl -limbuf -lm -o anti
+	$(CC) $(CFLAGS) anti.o util.o -lgl -limbuf -lm -o $(BINDIR)/anti
 
 ##############################################################################
 # anti2: ???
 ##############################################################################
 
 anti2: anti2.o util.o
-	$(CC) $(CFLAGS) anti2.o util.o -lgl -limbuf -lm -o anti2
+	$(CC) $(CFLAGS) anti2.o util.o -lgl -limbuf -lm -o $(BINDIR)/anti2
 
 ##############################################################################
 # Chroma: Chroma keying program?
@@ -67,7 +69,7 @@ anti2: anti2.o util.o
 ##############################################################################
 
 Chroma: Chroma.o  Chroma_main.o
-	$(CC) $(CFLAGS) Chroma.o Chroma_main.o util.o -lforms -lmovie -lgl -lX11 -ldmedia -lcl -lawareaudio -laudio -limbuf -lGL -lm -o Chroma
+	$(CC) $(CFLAGS) Chroma.o Chroma_main.o util.o -lforms -lmovie -lgl -lX11 -ldmedia -lcl -lawareaudio -laudio -limbuf -lGL -lm -o $(BINDIR)/Chroma
 
 Chroma_main.o:
 	$(CC) $(CFLAGS) -c Chroma_main.c
@@ -77,35 +79,35 @@ Chroma_main.o:
 ##############################################################################
 
 cmap: cmap.o util.o
-	$(CC) $(CFLAGS) cmap.o util.o -lgl -limbuf -lm -lmpc -o cmap
+	$(CC) $(CFLAGS) cmap.o util.o -lgl -limbuf -lm -lmpc -o $(BINDIR)/cmap
 
 ##############################################################################
 # fft: ???
 ##############################################################################
 
 fft: fft.o util.o
-	$(CC) $(CFLAGS) -DX_H -D_XLIB_H_ fft.o util.o -limbuf -lgl -lX11 -lcomplib.sgimath -lm -o fft
+	$(CC) $(CFLAGS) -DX_H -D_XLIB_H_ fft.o util.o -limbuf -lgl -lX11 -lcomplib.sgimath -lm -o $(BINDIR)/fft
 
 ##############################################################################
 # fromjstream: ???
 ##############################################################################
 
 fromjstream: fromjstream.o util.o
-	$(CC) $(CFLAGS) fromjstream.o util.o -lgl -lmpc -o fromjstream
+	$(CC) $(CFLAGS) fromjstream.o util.o -lgl -lmpc -o $(BINDIR)/fromjstream
 
 ##############################################################################
 # frompict: ???
 ##############################################################################
 
 frompict: frompict.o util.o
-	$(CC) $(CFLAGS) -DDEBUG frompict.o util.o -limbuf -lm -limage -o frompict
+	$(CC) $(CFLAGS) -DDEBUG frompict.o util.o -limbuf -lm -limage -o $(BINDIR)/frompict
 
 ##############################################################################
 # fs: File select program
 ##############################################################################
 
 fs: util.o gl_util.o storage.o ./traces/Button.o
-	$(CC) $(CFLAGS) fs.c -D_XLIB_H_ util.o gl_util.o storage.o ./traces/Button.o -limbuf -lm -lfm -lgl -o fs
+	$(CC) $(CFLAGS) fs.c -D_XLIB_H_ util.o gl_util.o storage.o ./traces/Button.o -limbuf -lm -lfm -lgl -o $(BINDIR)/fs
 #	#if (-x /usr/people/bin/fs) /bin/su - root -c "chown root /usr/people/bin/fs ; chmod +s /usr/people/bin/fs"
 
 ##############################################################################
@@ -113,17 +115,17 @@ fs: util.o gl_util.o storage.o ./traces/Button.o
 ##############################################################################
 
 hex: hex.o
-	$(CC) $(CFLAGS) hex.o -o hex
+	$(CC) $(CFLAGS) hex.o -o $(BINDIR)/hex
 
 ##############################################################################
 # morph: ???
 ##############################################################################
 
 morph: util.o morph.o gl_util.o
-	$(CC) $(CFLAGS) morph.o gl_util.o util.o -limbuf -lgl -lm -float -o morph
+	$(CC) $(CFLAGS) morph.o gl_util.o util.o -limbuf -lgl -lm -float -o $(BINDIR)/morph
 
 morphdebug: util.o gl_util.o
-	$(CC) -g morph.c gl_util.o util.o -limbuf -lgl -lm -float -o morph
+	$(CC) -g morph.c gl_util.o util.o -limbuf -lgl -lm -float -o $(BINDIR)/morph
 
 morph.o: morph.c
 	$(CC) $(CFLAGS) -c -float morph.c
@@ -136,23 +138,23 @@ morph.o: morph.c
 ##############################################################################
 
 movie: movie.o util.o
-	$(CC) $(CFLAGS) movie.o util.o -lmovie -lgl -lX11 -limbuf -ldmedia -lcl -lawareaudio -laudio -lm -o movie
-	ln -s movie mvcrop
-	ln -s movie mvoptimize
+	$(CC) $(CFLAGS) movie.o util.o -lmovie -lgl -lX11 -limbuf -ldmedia -lcl -lawareaudio -laudio -lm -o $(BINDIR)/movie
+	ln -s movie $(BINDIR)/mvcrop
+	ln -s movie $(BINDIR)/mvoptimize
 
 ##############################################################################
 # newstiff: Stream TIFF related
 ##############################################################################
 
 newstiff: newstiff.o
-	$(CC) $(CFLAGS) newstiff.o -lstiff -lm -o newstiff
+	$(CC) $(CFLAGS) newstiff.o -lstiff -lm -o $(BINDIR)/newstiff
 
 ##############################################################################
 # oops: ???
 ##############################################################################
 
 oops: oops.o util.o gl_util.o ./traces/Button.o
-	$(CC) $(CFLAGS) oops.o util.o gl_util.o ./traces/Button.o -lfm -lgl -lm -o oops
+	$(CC) $(CFLAGS) oops.o util.o gl_util.o ./traces/Button.o -lfm -lgl -lm -o $(BINDIR)/oops
 
 oops.o:
 	$(CC) $(CFLAGS) -cckr -c oops.c
@@ -162,29 +164,29 @@ oops.o:
 ##############################################################################
 
 outline: outline.o util.o
-	$(CC) $(CFLAGS) outline.o util.o -limbuf -lm -o outline
+	$(CC) $(CFLAGS) outline.o util.o -limbuf -lm -o $(BINDIR)/outline
 
 ##############################################################################
 # over: ???
 ##############################################################################
 
 over: over.o util.o storage.o
-	$(CC) $(CFLAGS) over.o util.o storage.o -limbuf -lgl -lm -o over
-	ln -s over overjoeri
+	$(CC) $(CFLAGS) over.o util.o storage.o -limbuf -lgl -lm -o $(BINDIR)/over
+	ln -s over $(BINDIR)/overjoeri
 
 ##############################################################################
 # paint: Paint program
 ##############################################################################
 
 paint: paint.o util.o
-	$(CC) $(CFLAGS) paint.o util.o -lgl -lX11 -limbuf -lm -lc -o paint
+	$(CC) $(CFLAGS) paint.o util.o -lgl -lX11 -limbuf -lm -lc -o $(BINDIR)/paint
 
 ##############################################################################
 # render: Render program
 ##############################################################################
 
 render: render.o util.o network.o ./traces/Button.o
-	$(CC) $(CFLAGS) render.o util.o network.o ./traces/Button.o -lm -lfm -lgl -o render
+	$(CC) $(CFLAGS) render.o util.o network.o ./traces/Button.o -lm -lfm -lgl -o $(BINDIR)/render
 
 ##############################################################################
 # render: Render program, GUI version
@@ -193,56 +195,56 @@ render: render.o util.o network.o ./traces/Button.o
 ##############################################################################
 
 render-gui: render-gui.o render-gui_cb.o render-gui_main.o renderd.o network.o util.o
-	$(CC) $(CFLAGS) render-gui.o render-gui_cb.o render-gui_main.o renderd.o network.o util.o -lfam -lC -lforms -lX11 -lm -o render-gui
+	$(CC) $(CFLAGS) render-gui.o render-gui_cb.o render-gui_main.o renderd.o network.o util.o -lfam -lC -lforms -lX11 -lm -o $(BINDIR)/render-gui
 
 ##############################################################################
 # renderd: render deamon
 ##############################################################################
 
 renderd: renderd.o renderd_main.o util.o network.o
-	$(CC) $(CFLAGS) renderd.o renderd_main.o util.o network.o -lfam -lC -o renderd
+	$(CC) $(CFLAGS) renderd.o renderd_main.o util.o network.o -lfam -lC -o $(BINDIR)/renderd
 
 ##############################################################################
 # savedisk: ???
 ##############################################################################
 
 savedisk: savedisk.o util.o
-	$(CC) $(CFLAGS) savedisk.o util.o -limbuf -lX11 -o savedisk
+	$(CC) $(CFLAGS) savedisk.o util.o -limbuf -o $(BINDIR)/savedisk
 
 ##############################################################################
 # saver: ???
 ##############################################################################
 
 saver: saver.o util.o
-	$(CC) $(CFLAGS) saver.o util.o -limbuf -lgl -lX11 -lm -o saver
+	$(CC) $(CFLAGS) saver.o util.o -limbuf -lgl -lX11 -lm -o $(BINDIR)/saver
 
 ##############################################################################
 # scale: ???
 ##############################################################################
 
 scale: scale.o util.o
-	$(CC) $(CFLAGS) scale.o util.o -limbuf -lgl -lX11 -lm -o scale
+	$(CC) $(CFLAGS) scale.o util.o -limbuf -lgl -lX11 -lm -o $(BINDIR)/scale
 
 ##############################################################################
 # scrndump: ???
 ##############################################################################
 
 scrndump: scrndump.o util.o
-	$(CC) $(CFLAGS) scrndump.o util.o -limbuf -lgl -lX11 -lm -o scrndump
+	$(CC) $(CFLAGS) scrndump.o util.o -limbuf -lgl -lX11 -lm -o $(BINDIR)/scrndump
 
 ##############################################################################
 # scsicmd: ???
 ##############################################################################
 
 scsicmd: scsicmd.o
-	$(CC) $(CFLAGS) scsicmd.o -lds -o scsicmd
+	$(CC) $(CFLAGS) scsicmd.o -lds -o $(BINDIR)/scsicmd
 
 ##############################################################################
 # scsicontrol: ???
 ##############################################################################
 
 scsicontrol: scsicontrol.o
-	$(CC) $(CFLAGS) scsicontrol.o -lds -o scsicontrol
+	$(CC) $(CFLAGS) scsicontrol.o -lds -o $(BINDIR)/scsicontrol
 
 ##############################################################################
 # shared: ???
@@ -251,43 +253,43 @@ scsicontrol: scsicontrol.o
 ##############################################################################
 
 shared: shared.o
-	$(CC) $(CFLAGS) shared.o -o shared
+	$(CC) $(CFLAGS) shared.o -o $(BINDIR)/shared
 
 ##############################################################################
 # sound: ???
 ##############################################################################
 
 sound: sound.o
-	$(CC) $(CFLAGS) sound.o -lm -o sound
+	$(CC) $(CFLAGS) sound.o -lm -o $(BINDIR)/sound
 
 ##############################################################################
 # stretch: ???
 ##############################################################################
 
 stretch: stretch.o
-	$(CC) $(CFLAGS) stretch.o util.o -float -limbuf -lgl -lX11 -lm -o stretch
+	$(CC) $(CFLAGS) stretch.o util.o -float -limbuf -lgl -lX11 -lm -o $(BINDIR)/stretch
 
 ##############################################################################
 # tocmap: ???
 ##############################################################################
 
 tocmap: tocmap.o
-	$(CC) $(CFLAGS) tocmap.o -limbuf -o tocmap
+	$(CC) $(CFLAGS) tocmap.o -limbuf -o $(BINDIR)/tocmap
 
 ##############################################################################
 # togif: Convert an IRIS image to GIF image
 ##############################################################################
 
 togif: util.o togif.o
-	$(CC) $(CFLAGS) togif.o -lm -limbuf -o togif
+	$(CC) $(CFLAGS) togif.o -lm -limbuf -o $(BINDIR)/togif
 
 ##############################################################################
 # imconv: Image conversion program
 ##############################################################################
 
 imconv: util.o imconv.o
-	$(CC) $(CFLAGS) imconv.o util.o -limbuf -lgl -lm -o imconv
-	ln -s imconv tga
+	$(CC) $(CFLAGS) imconv.o util.o -limbuf -lgl -lm -o $(BINDIR)/imconv
+	ln -s imconv $(BINDIR)/tga
 
 imconv.o: toiff.c
 	$(CC) $(CFLAGS) -c toiff.c -o imconv.o
@@ -297,8 +299,8 @@ imconv.o: toiff.c
 ##############################################################################
 
 toiff: util.o toiff.o
-	$(CC) $(CFLAGS) -DSTRIP toiff.o util.o -limbuf -lm -o toiff
-	ln -s toiff fromiff
+	$(CC) $(CFLAGS) -DSTRIP toiff.o util.o -limbuf -lm -o $(BINDIR)/toiff
+	ln -s toiff $(BINDIR)/fromiff
 
 toiff.o: toiff.c
 	$(CC) $(CFLAGS) -DSTRIP -c toiff.c
@@ -308,28 +310,28 @@ toiff.o: toiff.c
 ##############################################################################
 
 tojstream: tojstream.o util.o
-	$(CC) $(CFLAGS) tojstream.o util.o -lgl -lmpc -o tojstream
+	$(CC) $(CFLAGS) tojstream.o util.o -lgl -lmpc -o $(BINDIR)/tojstream
 
 ##############################################################################
 # togif: Convert an IRIS image to targa image
 ##############################################################################
 
 totarga: util.o totarga.o
-	$(CC) $(CFLAGS) totarga.o util.o -lgl -limage -o totarga
+	$(CC) $(CFLAGS) totarga.o util.o -lgl -limage -o $(BINDIR)/totarga
 
 ##############################################################################
 # tracesd: Traces render deamon
 ##############################################################################
 
 tracesd: tracesd.o util.o network.o
-	$(CC) $(CFLAGS) tracesd.o util.o network.o -lfam -lC -o renderd
+	$(CC) $(CFLAGS) tracesd.o util.o network.o -lfam -lC -o $(BINDIR)/renderd
 
 ##############################################################################
 # video: Video capture program?
 ##############################################################################
 
 video: video.o
-	$(CC) $(CFLAGS) video.o -lvl -lgl -lX11 -ldmedia -limbuf -o video
+	$(CC) $(CFLAGS) video.o -lvl -lgl -lX11 -ldmedia -limbuf -o $(BINDIR)/video
 
 video.o:
 	$(CC) $(CFLAGS) -c video.c
@@ -339,21 +341,21 @@ video.o:
 ##############################################################################
 
 vector: vector.o util.o
-	$(CC) $(CFLAGS) vector.c util.o -lgl -limbuf -lm -o vector
+	$(CC) $(CFLAGS) vector.c util.o -lgl -limbuf -lm -o $(BINDIR)/vector
 
 ##############################################################################
 # warp: ???
 ##############################################################################
 
 warp: warp.o util.o
-	$(CC) $(CFLAGS) warp.o util.o -limbuf -limage -lm -o warp
+	$(CC) $(CFLAGS) warp.o util.o -limbuf -lm -o $(BINDIR)/warp
 
 ##############################################################################
 # wu: ???
 ##############################################################################
 
 wu: wu.o util.o gl_util.o ./traces/Button.o
-	$(CC) $(CFLAGS) wu.o util.o gl_util.o ./traces/Button.o -limbuf -lfm -lgl -lm -float -o wu
+	$(CC) $(CFLAGS) wu.o util.o gl_util.o ./traces/Button.o -limbuf -lfm -lgl -lm -float -o $(BINDIR)/wu
 
 wu.o: wu.c
 	$(CC) $(CFLAGS) -c -float wu.c
@@ -363,63 +365,63 @@ wu.o: wu.c
 ##############################################################################
 
 yuvrgb: yuvrgb.o util.o gl_util.o ./traces/arith.o ./traces/Button.o
-	$(CC) $(CFLAGS) yuvrgb.o util.o gl_util.o ./traces/arith.o ./traces/Button.o -lfm -lgl -lX11 -limbuf -lm -o yuvrgb
-	ln -s yuvrgb rgbyuv
-	ln -s yuvrgb cpyalpha
-	ln -s yuvrgb col_to_alpha
-	ln -s yuvrgb mask
-	ln -s yuvrgb grabopt
-	ln -s yuvrgb 2to3
-	ln -s yuvrgb scalecdi
-	ln -s yuvrgb deint
-	ln -s yuvrgb reint
-	ln -s yuvrgb nop
-	ln -s yuvrgb chromakey
-	ln -s yuvrgb temp
-	ln -s yuvrgb mrtotga
-	ln -s yuvrgb tompeg
-	ln -s yuvrgb frommpeg
-	ln -s yuvrgb abb
-	ln -s yuvrgb sub2
-	ln -s yuvrgb add2
-	ln -s yuvrgb lace
-	ln -s yuvrgb premul
-	ln -s yuvrgb demul
-	ln -s yuvrgb stripalpha
-	ln -s yuvrgb fieldsplit
-	ln -s yuvrgb fieldswap
-	ln -s yuvrgb fieldmerge
-	ln -s yuvrgb rmcrawl
-	ln -s yuvrgb rotcol
-	ln -s yuvrgb tojst
-#	ln -s yuvrgb fromjstream
-	ln -s yuvrgb medsys
-	ln -s yuvrgb dvd
-	ln -s yuvrgb gamma1
-	ln -s yuvrgb gamma2
-	ln -s yuvrgb graph
+	$(CC) $(CFLAGS) yuvrgb.o util.o gl_util.o ./traces/arith.o ./traces/Button.o -lfm -lgl -lX11 -limbuf -lm -o $(BINDIR)/yuvrgb
+	ln -s yuvrgb $(BINDIR)/rgbyuv
+	ln -s yuvrgb $(BINDIR)/cpyalpha
+	ln -s yuvrgb $(BINDIR)/col_to_alpha
+	ln -s yuvrgb $(BINDIR)/mask
+	ln -s yuvrgb $(BINDIR)/grabopt
+	ln -s yuvrgb $(BINDIR)/2to3
+	ln -s yuvrgb $(BINDIR)/scalecdi
+	ln -s yuvrgb $(BINDIR)/deint
+	ln -s yuvrgb $(BINDIR)/reint
+	ln -s yuvrgb $(BINDIR)/nop
+	ln -s yuvrgb $(BINDIR)/chromakey
+	ln -s yuvrgb $(BINDIR)/temp
+	ln -s yuvrgb $(BINDIR)/mrtotga
+	ln -s yuvrgb $(BINDIR)/tompeg
+	ln -s yuvrgb $(BINDIR)/frommpeg
+	ln -s yuvrgb $(BINDIR)/abb
+	ln -s yuvrgb $(BINDIR)/sub2
+	ln -s yuvrgb $(BINDIR)/add2
+	ln -s yuvrgb $(BINDIR)/lace
+	ln -s yuvrgb $(BINDIR)/premul
+	ln -s yuvrgb $(BINDIR)/demul
+	ln -s yuvrgb $(BINDIR)/stripalpha
+	ln -s yuvrgb $(BINDIR)/fieldsplit
+	ln -s yuvrgb $(BINDIR)/fieldswap
+	ln -s yuvrgb $(BINDIR)/fieldmerge
+	ln -s yuvrgb $(BINDIR)/rmcrawl
+	ln -s yuvrgb $(BINDIR)/rotcol
+	ln -s yuvrgb $(BINDIR)/tojst
+#	ln -s yuvrgb $(BINDIR)/fromjstream
+	ln -s yuvrgb $(BINDIR)/medsys
+	ln -s yuvrgb $(BINDIR)/dvd
+	ln -s yuvrgb $(BINDIR)/gamma1
+	ln -s yuvrgb $(BINDIR)/gamma2
+	ln -s yuvrgb $(BINDIR)/graph
 
 ##############################################################################
 # zipexec: ???
 ##############################################################################
 
 zipexec: zipexec.o
-	$(CC) $(CFLAGS) zipexec.o -lm -o zipexec
+	$(CC) $(CFLAGS) zipexec.o -lm -o $(BINDIR)/zipexec
 
 ##############################################################################
 # zipfork: ???
 ##############################################################################
 
 zipfork: zipfork.o
-	$(CC) $(CFLAGS) zipfork.o -lm -o zipfork
+	$(CC) $(CFLAGS) zipfork.o -lm -o $(BINDIR)/zipfork
 
 ##############################################################################
 # zoom: Display magnification program
 ##############################################################################
 
 zoom: zoom.o
-	$(CC) $(CFLAGS) zoom.o util.o -lgl -limbuf -lm -o zoom
-#	strip zoom
+	$(CC) $(CFLAGS) zoom.o util.o -lgl -limbuf -lm -o $(BINDIR)/zoom
+#	strip $(BINDIR)/zoom
 
 
 
@@ -477,13 +479,13 @@ zoom: zoom.o
 #	cc -O2 -cckr fullscreen.c util.o -lgl -lm -limbuf -lfm -lc -lm -o fullscreen
 
 #getdir: getdir.o storage.o storage.h
-#	cc -g getdir.o storage.o -o -lc getdir
+#	cc -g getdir.o storage.o -o getdir -lc getdir
 
 #grab: grab.c util.o
 #	cc -g grab.c util.o -lvfr -limbuf -lm -lmpc -o grab
 
 #mapdef: mapdef.o
-#	cc -g mapdef.o /usr/people/trace/mips1/util.o /usr/people/frank/source/gl_util.o -lgl -lm -o mapdef
+#	cc -g mapdef.o /usr/people/trace/mips1/util.o /usr/people/frank/source/gl_util.o -lgl -lm -omapdef
 
 #mini: mini.o util.o storage.o /usr/lib/libimbuf.a
 #	cc -O2 mini.o util.o storage.o -lgl -limbuf -lm -lmpc -o mini
