@@ -26,7 +26,7 @@
 #include <sys/mman.h>
 
 /* 
-bindkeyo -r f1,'cc sh.c -o shared \n'
+bindkeyo -r f1,'cc shared.c -o shared \n'
 bindkeyo -r f2,'shared \n'
 */
 
