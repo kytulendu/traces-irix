@@ -2,3 +2,7 @@
 *.a
 *.so
 so_locations
+bin-irix-mips1
+bin-irix-mips2
+lib-irix-mips1
+lib-irix-mips2
