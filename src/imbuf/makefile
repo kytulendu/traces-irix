@@ -32,7 +32,15 @@ cspace.o data.o delta.o dither.o divers.o filter.o ham.o hamx.o iff.o \
 iris.o izoom.o jpeg.o makecmap.o mdec_decode.o readimage.o rectop.o \
 rotate.o scaling.o targa.o tiff.o tim.o troep.o util.o writeimage.o
 
-all: libimbuf.so
+default all: libimbuf.so
+
+clean:
+	$(RM) *.o
+	$(RM) libimbuf.a
+	$(RM) libimbuf.so
+
+.c.o:
+	$(CC) $(CFLAGS) -c $<
 
 # note: must use tab as white space in all entry
 libimbuf.a: $(OBJS)
@@ -43,13 +51,7 @@ libimbuf.a: $(OBJS)
 	$(AR) libimbuf.a $(OBJS) jpeg-6b/*.o
 
 libimbuf.so: libimbuf.a
-	$(LN) $(LDFLAGS) -soname libimbuf.so libimbuf.a -o libimbuf.so $(LDLIBS)
-
-clean:
-	$(RM) *.o
-	$(RM) libimbuf.a
-
-install: all
+	$(LN) $(LDFLAGS) -soname libimbuf.so libimbuf.a -o libimbuf.so
 
 # Comment this when first building libimbuf as convert_arrays.h is already generated.
 #convert_arrays.h: make_convert
@@ -57,6 +59,3 @@ install: all
 #make_convert: make_convert.c
 #	cd .. ; make util.o; cd imbuf
 #	$(CC) $(CFLAGS) make_convert.c ../util.o -limbuf -lm -o make_convert
-
-.c.o:
-	$(CC) $(CFLAGS) -c $<

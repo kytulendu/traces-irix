@@ -37,7 +37,7 @@ OBJECT5 = ray.o initrender.o zbuf.o render.o textu.o shadbuf.o effect.o
 OBJECT6 = isect.o trabuts.o font.o nurb.o displist.o psfont.o exotic.o
 OBJECT7 = calcika.o editika.o
 
-default: psfont.o traces
+default all: psfont.o traces
 
 .c.o:
 	$(CC) $(CFLAGS) -float -cckr -c $<
