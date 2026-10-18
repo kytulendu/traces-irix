@@ -1,5 +1,7 @@
 # Traces
 
+![Trace running on SGI IRIX 5.3](./resources/traces.png)
+
 Traces is an ancient in-house 3D modeling, animation, and ray tracing software from the '90, developed by the Dutch animation studio NeoGeo. Later this software become [Blender](https://www.blender.org/).
 
 Originally develop for Commodore Amiga, this software was later ported to Silicon Graphics workstation.
