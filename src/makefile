@@ -14,7 +14,7 @@ CFLAGS= -O2 -mips2 $(INCLUDES)
 default all: anim anim5 animsplit anti anti2 cmap fft fromjstream frompict fs \
 hex imconv morph newstiff oops outline over paint render renderd savedisk \
 scale scrndump scsicmd scsicontrol stretch sound tocmap togif toiff tojstream \
-totarga tracesd vector video wu yuvrgb zipexec zipfork zoom
+totarga tracesd vector video warp wu yuvrgb zipexec zipfork zoom
 
 .c.o:
 	$(CC) $(CFLAGS) -c $<
@@ -325,11 +325,14 @@ tracesd: tracesd.o util.o network.o
 	$(CC) $(CFLAGS) tracesd.o util.o network.o -lfam -lC -o renderd
 
 ##############################################################################
-# tracesd: Traces render deamon
+# video: Video capture program?
 ##############################################################################
 
-tracesd: tracesd.o util.o network.o
-	$(CC) $(CFLAGS) tracesd.o util.o network.o -lfam -lC -o renderd
+video: video.o
+	$(CC) $(CFLAGS) video.o -lvl -lgl -lX11 -ldmedia -limbuf -o video
+
+video.o:
+	$(CC) $(CFLAGS) -c video.c
 
 ##############################################################################
 # vector: ???
