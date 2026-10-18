@@ -2,7 +2,7 @@
 
 Traces is an ancient in-house 3D modeling, animation, and ray tracing software from the '90, developed by the Dutch animation studio NeoGeo. Later this software become [Blender](https://www.blender.org/).
 
-Originally develop for Commodore Amiga, later was ported to Silicon Graphics workstation.
+Originally develop for Commodore Amiga, this software was later ported to Silicon Graphics workstation.
 
 Source code and some compiled binaries originally released on [Official Blender source code archive](https://download.blender.org/source/chest/) in file `neogeo.tar.gz`.
 
@@ -10,6 +10,8 @@ The IRIX binaries from `neogeo.tar.gz` required `libimbuf.so` and `libimage.so` 
 I have untangle that problem and found it only used for building `make_convert` to generate `convert_arrays.h`, which `convert_arrays.h` is already included in the source code tarball.
 
 For `libimage.so`, it is dynamic library version of `libimage.a`, which can be install from IRIX 5.3 IDO and can just link it to a dynamic library.
+
+Note that the original Traces executable is compiled on IRIX 6.2 and some code do required IRIX 6.2 to compile.
 
 Some changes to the source code other than to make the source code compile:
 
@@ -21,15 +23,18 @@ Some changes to the source code other than to make the source code compile:
 
 # Building the source code on IRIX 5.3
 
-It currently compile with `-mips2` flags, which the result binary will required R4000 CPU.
+**TODO: fix and compile all the remaining programs (in src/play/ and src/ton/).**
 
-To compile for R3000 CPU, change `CFLAGS` variable in `makefile` from `-mips2` to `-mips1` and rebuild all source code.
+**TODO: some program required FORMS library, need to find and build FORMS source code.**
 
-**TODO: fix and compile all the remaining utility programs.**
-**TODO: some program required FORMS library.**
-**TODO: see about some of the hard coded paths in various places.**
+**TODO: see to the hard coded paths in various places.**
+
+Currently compile with `-mips2` flags, which the result binary will required R4000 CPU.
+
+To compile for R3000 CPU, change `CFLAGS` variable in all `makefile` from `-mips2` to `-mips1` and rebuild all source code.
 
 - Install IRIX 5.3 IDO
+- Install Impressario 1.2 Developer's Kit (optional, for compile `newstiff` program)
 - Open a terminal and change directory to `src/imbuf/`
 - `make`
 - Copy `libimbuf.so` and `libimbuf.a` to `/usr/lib/`
@@ -38,16 +43,12 @@ To compile for R3000 CPU, change `CFLAGS` variable in `makefile` from `-mips2` t
 - Copy `libimage.so` to `/usr/lib/`
 - `cd ../traces`
 - `make`
-- copy `traces_new` to `/usr/people/bin/traces`
+- Copy `traces` to `/usr/people/bin/`
 - `cd ..`, the current directory will be at `src/`
 - `make`
-- copy the compiled binaries to `/usr/people/bin/`
+- Compiled executable will go to `bin-irix-mips2`, copy the executable it to `/usr/people/bin/`
 
-# How to use Traces
-
-TODO
-
-# Directory layout
+# Install directory layout
 
 This was the directory layout that I used while fixing and compiling Traces on IRIX.
 
@@ -57,19 +58,9 @@ This was the directory layout that I used while fixing and compiling Traces on I
     /usr/people/khral/traces/scenes/    sample scene from Traces Amiga version
     /usr/people/khral/traces/src/       trace source code from this repo
 
-# Some unused source code files
+# How to use Traces
 
-    src/traces/
-    brender.c                   unfinished code
-    makeblender.c               edit compiled traces in to blender
-    oud.c                       experimental code
-    performance.c               cpu benchmark
-    psfont405.c                 psfont.c for IRIX 4.0.5
-    rt.c                        for testing Normalise function
-    stars.c                     make_stars function
-    tab.c                       for testing makekeytab function
-    test.c                      for testing qsortN2 function
-    verditSort.c                older or experimental? version of verdit.c
+TODO
 
 # Information about Traces
 
@@ -84,3 +75,33 @@ This was the directory layout that I used while fixing and compiling Traces on I
 [Traces (Blender's Predecessor)](https://www.youtube.com/watch?v=glhi_l2VDVE) on Amiga
 
 [Traces Tutorial - Blender Bach](https://www.youtube.com/watch?v=zKn8qjgG1YA) on Amiga
+
+# Some unused source code files
+
+    src/
+    hidline.c                   IRIS GL hidden lines demo
+    kramer.c                    experimental code?
+    mcast.c                     program demonstrates how to send and receive UDP multicast
+    mpegdec.c                   unfinished code
+    ontwikkel.c                 video and disk related benchmark code
+    ontwikkel3.c                video and disk related benchmark code
+    osview.c
+    test.c                      experimental code
+    vfrutil.c                   Video Framer utility
+
+    src/traces/
+    brender.c                   unfinished code
+    makeblender.c               edit compiled traces in to blender
+    oud.c                       experimental code
+    performance.c               CPU benchmark code
+    psfont405.c                 psfont.c for IRIX 4.0.5
+    rt.c                        for testing Normalise function
+    stars.c                     make_stars function
+    tab.c                       for testing makekeytab function
+    test.c                      for testing qsortN2 function
+    verditSort.c                older or experimental? version of verdit.c
+
+    src/unused
+    Fs*.c, Fs*.h                unfinished file selector, FORMS library version
+    pluginrgb.c                 Blender plugin
+    plugintex.c                 Blender plugin
