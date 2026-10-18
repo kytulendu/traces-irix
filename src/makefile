@@ -9,15 +9,6 @@ INCLUDES= -I. -I./include
 CFLAGS= -O2 -mips2 $(INCLUDES)
 #CFLAGS = -O2 -mips2 -Xcpluscomm $(INCLUDES)
 
-# linker
-LN= ld
-
-# Link-time cc options
-LDFLAGS= -shared -all
-
-# To link any special libraries, add the necessary -l commands here.
-LDLIBS= 
-
 # require libforms: Chroma render-gui
 # not compile: movie saver shared
 default all: anim anim5 animsplit anti anti2 cmap fft fromjstream frompict fs \

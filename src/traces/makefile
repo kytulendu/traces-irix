@@ -14,12 +14,6 @@ CFLAGS= -O2 -mips2 $(INCLUDES)
 CFLAGS4000= -O2 -mips2 $(INCLUDES)
 CFLAGSG= -g -mips2 $(INCLUDES)
 
-# linker
-LN= ld
-
-# Link-time cc options
-LDFLAGS= -shared -all
-
 # To link any special libraries, add the necessary -l commands here.
 # NOTE: UNDER IRIX 5.2 THE -lfastm OPTION MAY ONLY BE IN A FEW PLACES, SEE LDLIBS2
 LDLIBS= -lgl -lX11 -lfm -limbuf -lmpc -lmalloc -lm -limage -lmovie -ldmedia -lcl -lawareaudio -laudio

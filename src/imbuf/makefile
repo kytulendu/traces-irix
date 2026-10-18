@@ -21,9 +21,6 @@ LN= ld
 # Link-time cc options
 LDFLAGS= -shared -all
 
-# To link any special libraries, add the necessary -l commands here.
-LDLIBS= 
-
 # file deletion command
 RM= rm -f
 
