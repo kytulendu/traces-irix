@@ -24,7 +24,7 @@
 
 #include "forms.h"
 #include <stdlib.h>
-#include "Play.h"
+#include "play-gui.h"
 
 FD_Play *create_form_Play(void)
 {

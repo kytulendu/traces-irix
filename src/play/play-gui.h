@@ -19,9 +19,9 @@
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
 
-#ifndef FD_Play_h_
+#ifndef FD_Play_gui_h_
 
-#define FD_Play_h_
+#define FD_Play_gui_h_
 /* Header file generated with fdesign. */
 
 /**** Callback routines ****/
@@ -91,5 +91,5 @@ typedef struct {
 
 extern FD_Play * create_form_Play(void);
 
-#endif /* FD_Play_h_ */
+#endif /* FD_Play_gui_h_ */
 

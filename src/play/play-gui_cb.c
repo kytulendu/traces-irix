@@ -22,7 +22,7 @@
 #include "play.h"
 
 #include "forms.h"
-#include "Play.h"
+#include "play-gui.h"
 
 extern FD_Play *fd_Play;
 extern void abs_frame(double);

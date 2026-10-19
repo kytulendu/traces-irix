@@ -22,7 +22,7 @@
 #include "play.h"
 
 #include "forms.h"
-#include "Play.h"
+#include "play-gui.h"
 
 _PlayState playstate;
 double total_frames;
