@@ -13,10 +13,10 @@ BINDIR=../bin-irix-mips2
 
 # require libforms: Chroma render-gui
 # not compile: movie saver shared
-default all: anim anim5 animsplit anti anti2 cmap fft fromjstream frompict fs \
-hex imconv morph newstiff oops outline over paint render renderd savedisk \
-scale scrndump scsicmd scsicontrol stretch sound tocmap togif toiff tojstream \
-totarga tracesd vector video warp wu yuvrgb zipexec zipfork zoom
+default all: anim anim5 animsplit anti anti2 cmap crop fft fromjstream \
+frompict fs hex imconv morph newstiff oops outline over paint render renderd \
+savedisk scale scrndump scsicmd scsicontrol stretch sound tocmap togif toiff \
+tojstream totarga tracesd vector video warp wu yuvrgb zipexec zipfork zoom
 
 .c.o:
 	$(CC) $(CFLAGS) -c $<
@@ -80,6 +80,13 @@ Chroma_main.o:
 
 cmap: cmap.o util.o
 	$(CC) $(CFLAGS) cmap.o util.o -lgl -limbuf -lm -lmpc -o $(BINDIR)/cmap
+
+##############################################################################
+# crop: Image crop program
+##############################################################################
+
+crop: crop.o util.o
+	$(CC) $(CFLAGS) crop.o util.o -limbuf -lm -o $(BINDIR)/crop
 
 ##############################################################################
 # fft: ???
