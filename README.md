@@ -25,9 +25,7 @@ Some changes to the source code other than to make the source code compile:
 
 # Building the source code on IRIX 5.3
 
-**TODO: fix and compile all the remaining programs (in src/play/ and src/ton/).**
-
-**TODO: some program required FORMS library, need to find and build FORMS source code.**
+**TODO: Chroma, render-gui, play and play-gui program required XForms Toolkit v0.86, as the source code of old v0.8x is not available, replace it with v1.0.2 (required libxpm on IRIX 5.3).**
 
 **TODO: see to the hard coded paths in various places.**
 
@@ -45,10 +43,9 @@ To compile for R3000 CPU, change `CFLAGS` variable in all `makefile` from `-mips
 - Copy `libimage.so` to `/usr/lib/`
 - `cd ../traces`
 - `make`
-- Copy `traces` to `/usr/people/bin/`
 - `cd ..`, the current directory will be at `src/`
 - `make`
-- Compiled executable will go to `bin-irix-mips2`, copy the executable it to `/usr/people/bin/`
+- Compiled executable will go to `bin-irix-mips2`, copy the executable to `/usr/people/bin/`
 
 # Install directory layout
 
@@ -62,7 +59,17 @@ This was the directory layout that I used while fixing and compiling Traces on I
 
 # How to use Traces
 
-TODO
+    F1              load scene
+    F2              save scene
+    Q               quit
+    Shift + A       popup menu
+    Space           popup menu
+    Tab             enter/exit edit mode
+    G               grab
+    R               rotate
+    S               scale
+    Z               solid view
+    Numpad Keys     3D viewport mode select
 
 # Information about Traces
 
@@ -91,9 +98,11 @@ TODO
     test.c                      experimental code
     vfrutil.c                   Video Framer utility
 
+    src/playstation_engine      NeoGeo's in-house Sony Playstation game engine
+
     src/traces/
     brender.c                   unfinished code
-    makeblender.c               edit compiled traces in to blender
+    makeblender.c               binary edit compiled Traces in to Blender
     oud.c                       experimental code
     performance.c               CPU benchmark code
     psfont405.c                 psfont.c for IRIX 4.0.5
@@ -107,3 +116,17 @@ TODO
     Fs*.c, Fs*.h                unfinished file selector, FORMS library version
     pluginrgb.c                 Blender plugin
     plugintex.c                 Blender plugin
+
+    src/unused/ton
+    calcika.c
+    calcikan.c
+    dev3d.c                     Blender experimental code
+    dyna.c                      dynamic experimental code
+    fade.c                      gammaramp experimental code
+    ika3d.c
+    inbetween.c                 unfinished code
+    Objbuts.c                   shade sphere demo?
+    Paint.c                     unfinish? new version of paint program
+    readblender.c               read Blender file
+    tunnel.c                    tunnel graphic demo
+    viewika.c
