@@ -1,28 +1,34 @@
-#include $(ROOT)/usr/include/make/commondefs
+# C compiler
+CC=cc
 
-OPTIMIZER  = -g
+# Include directory
+INCLUDES= -I. -I../include
 
-OBJECTS = play.o vlInit.o clInit.o alInit.o mvInit.o Xinit.o streamDecompress.o glxh2.o network.o util.o edl.o timecode.o Play.o Play_cb.o
-HFILES = play.h
-LLDLIBS= -lforms -lX11 -lmovie -lcl -ldmedia -lgl -laudio -lm -lvl -lgen
-LDMFLAGS= -lsphere -lgl -lm -lX11 -s
+# C compiler options
+CFLAGS= -O2 -mips2 $(INCLUDES)
 
-TARGETS =  play
+BINDIR=../../bin-irix-mips2
 
-default all: $(TARGETS)
+OBJECTS = play.o vlInit.o clInit.o alInit.o mvInit.o Xinit.o streamDecompress.o glxh2.o network.o util.o edl.o timecode.o play-gui.o play-gui_cb.o
 
-Play.o Play_cb.o Xinit.o edl.o: Play.h
+LDLIBS= -lforms -lX11 -lmovie -lcl -ldmedia -lgl -laudio -lm -lvl -lgen
+
+#play-gui play simplemovie
+default all: play
+
+.c.o:
+	$(CC) $(CFLAGS) -c $<
 
 play: $(OBJECTS)
-	cc -o play_new $(OBJECTS) $(LLDLIBS)
-
-	/usr/people/bin/safemv -b play_new play
+	$(CC) $(CFLAGS) $(OBJECTS) $(LDLIBS) -o play
+	#/usr/people/bin/safemv -b play_new play
 	# /bin/su - root -c "chown root /usr/people/frank/source/play/play ; chmod +s /usr/people/frank/source/play/play"
 
+play-gui: play-gui.o play-gui_cb.o play-gui_main.o
+	$(CC) $(CFLAGS) play-gui*.o -lforms -lX11 -lm -o play-gui
 
-Play:Play.o Play_cb.o Play_main.o
-	cc -O -I/usr/include/local Play*.o -o Play -lforms -lX11 -lm 
-	
+mix2: mix2.o glxh2.o
+	$(CC) $(CFLAGS) mix2.o glxh2.o -lgutil -lsphere -lgl -lm -lX11 -o mix2
 
-timecode: timecode.o
-	cc -o $@ timecode.o -laudiofile -lm
+simplemovie: simplemovie.o glxhelper.o
+	$(CC) $(CFLAGS) simplemovie.o glxhelper.o -lmovie -ldmedia -laudio -lX11 -o simplemovie
