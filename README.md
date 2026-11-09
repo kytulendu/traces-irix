@@ -13,6 +13,8 @@ I have untangle that problem and found it only used for building `make_convert` 
 
 For `libimage.so`, it is dynamic library version of `libimage.a`, which can be install from IRIX 5.3 IDO and can just link it to a dynamic library.
 
+Traces need only `traces` and `fs` executable to operate.
+
 Note that the original Traces executable is compiled on IRIX 6.2 and some code do required IRIX 6.2 to compile.
 
 Some changes to the source code other than to make the source code compile:
@@ -22,19 +24,15 @@ Some changes to the source code other than to make the source code compile:
 
   In IGES code, `DL_POINT` type is not exist, even in newer version of blender. I have assign it as `DL_SEGM` as a guess.
 
-
 # Building the source code on IRIX 5.3
 
-**TODO: Chroma, render-gui, play and play-gui program required XForms Toolkit v0.86, as the source code of old v0.8x is not available, replace it with v1.0.2 (required libxpm on IRIX 5.3).**
-
-**TODO: see to the hard coded paths in various places.**
-
-Currently compile with `-mips2` flags, which the result binary will required R4000 CPU.
+Default is compile with `-mips2` flags, which the result binary will require R4000 CPU.
 
 To compile for R3000 CPU, change `CFLAGS` variable in all `makefile` from `-mips2` to `-mips1` and rebuild all source code.
 
 - Install IRIX 5.3 IDO
 - Install Impressario 1.2 Developer's Kit (optional, for compile `newstiff` program)
+- Install [XForms Toolkit v0.86](https://archive.org/details/xforms-toolkit) (optional, for compile `Chroma`, `render-gui`, `play` and `play-gui` program)
 - Open a terminal and change directory to `src/imbuf/`
 - `make`
 - Copy `libimbuf.so` and `libimbuf.a` to `/usr/lib/`
