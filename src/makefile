@@ -11,12 +11,12 @@ CFLAGS= -O2 -mips2 $(INCLUDES)
 
 BINDIR=../bin-irix-mips2
 
-# require libforms: Chroma render-gui
 # not compile: movie saver shared
 default all: anim anim5 animsplit anti anti2 cmap crop fft fromjstream \
 frompict fs hex imconv morph newstiff oops outline over paint render renderd \
 savedisk scale scrndump scsicmd scsicontrol stretch sound tocmap togif toiff \
-tojstream totarga tracesd vector video warp wu yuvrgb zipexec zipfork zoom
+tojstream totarga tracesd vector video warp wu yuvrgb zipexec zipfork zoom \
+Chroma render-gui
 
 .c.o:
 	$(CC) $(CFLAGS) -c $<
